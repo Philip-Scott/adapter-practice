@@ -1,5 +1,6 @@
 package com.iteso.adapter;
 
+import com.iteso.adapter.impl.TacoAdapter;
 import com.iteso.adapter.impl.TacoLengua;
 import com.iteso.adapter.impl.TortaAdapter;
 import com.iteso.adapter.impl.TortaBistec;
@@ -15,12 +16,20 @@ public class TuTaco {
 
         Taco convertedToTaco = new TortaAdapter(tortaBistec);
 
-
-
         myPlate.addTaco(tacolLengua);
         myPlate.addTaco(convertedToTaco);
 
         myPlate.servePlate();
 
+        System.out.println ("\nTorta Plate:-------------------------");
+
+        TortaPlate tplate = new TortaPlate();
+
+        Torta tacoTortaLengua = new TacoAdapter(new TacoLengua());
+
+        tplate.add(new TortaBistec());
+        tplate.add(tacoTortaLengua);
+
+        tplate.servePlate();
     }
 }
